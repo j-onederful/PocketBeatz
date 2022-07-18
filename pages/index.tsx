@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
+import Drumpad from '../components/Drumpad'
 
 type DrumObject = {
-  [kery: string]: string
+  [key: string]: string;
 }
 
-const sounds: DrumObject[] = [
+// sounds=drumTypes
+const drumTypes: DrumObject[] = [
   {
     type: 'bass',
     sound: '/sounds/bass.wav'
@@ -73,7 +75,35 @@ const sounds: DrumObject[] = [
   }
 ]
 
-export default function Home() {
+const Wrapper = styled.div`
+  min-height: 40vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const PadsWrapper = styled.main`
+  padding: 5rem 0;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
+  
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`
+
+const Home: React.FC = () => {
+  const [drums] = useState(drumTypes)
+
+  const handlePlayDrum = (sound: string): void => {
+    const audio = new Audio(sound)
+    audio.play()
+  }
+
   return (
     <div>
       <Head>
@@ -82,7 +112,18 @@ export default function Home() {
         <link rel="icon" href="/pocketbeatzlogo.png" />
       </Head>
 
-      <h1>app</h1>
+      <Wrapper>
+        <PadsWrapper>
+          {drums.map(drum => (
+            <Drumpad 
+              key={drum.type}
+              drumType={drum.type}
+              onClick={() => handlePlayDrum(drum.sound)}
+            />
+          ))}
+        </PadsWrapper>
+      </Wrapper>
     </div>
   )
 }
+export default Home
