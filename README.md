@@ -14,7 +14,7 @@
  - Possibly MongoDB (for stretch)
 
 
- ![wireframe](./img/p4-wireframe.png)
+ ![wireframe](./public/p4-wireframe.png)
 
  ### UserFlow
  ---
