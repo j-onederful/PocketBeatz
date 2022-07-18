@@ -16,8 +16,8 @@ const StyledDrumPad = styled.div`
     }
 
     @media (max-width: 700px) {
-        width: 6rem;
-        height: 6rem
+        width: 87px;
+        height: 87px
     }
 
 `

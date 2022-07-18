@@ -105,6 +105,15 @@ const Wrapper = styled.div`
   border-radius: 10px;
   filter: drop-shadow(10px 10px 10px black);
 
+  @media (max-width: 700px) {
+    align-items: center;
+    position: static;
+    // margin-left: 55px;
+    width: 380px;
+    height: 40rem;
+    flex-direction: row
+    margin-bottom: 10rem;
+  }
 `
 
 const PadsWrapper = styled.main`
@@ -115,7 +124,9 @@ const PadsWrapper = styled.main`
   grid-gap: 5px;
   
   @media (max-width: 700px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    position: fixed;
+    padding: 0;
   }
 `
 
