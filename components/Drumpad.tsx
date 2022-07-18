@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const StyledDrum = styled.div`
+const StyledDrumPad = styled.div`
     width: 8rem;
     height: 8rem;
     border-radius: 6px;
@@ -26,11 +26,12 @@ type Props = {
     drumType: string;
     // letter: string;
     onClick: () => void;
+    // TODO: get this shit workin
     onKeyDown: () => void;
 }
 
 const Drumpad: React.FC<Props> = ({ drumType, onClick, onKeyDown }) => (
-    <StyledDrum onClick={onClick} onKeyDown={onKeyDown}></StyledDrum>
+    <StyledDrumPad onClick={onClick} onKeyDown={onKeyDown}></StyledDrumPad>
 )
 
 export default Drumpad

@@ -93,15 +93,22 @@ const drumTypes: DrumObject[] = [
 
 const Wrapper = styled.div`
   min-height: 40vh;
-  padding: 0 0.5rem;
+  width: 90vh;
+  // padding: 0 0.5rem;
+  margin-top: 10rem;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: end;
+  background-color: gray;
+  border-radius: 10px;
+  filter: drop-shadow(10px 10px 10px black);
+
 `
 
 const PadsWrapper = styled.main`
-  padding: 5rem 0;
+  padding: 2rem 2rem;
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -144,6 +151,7 @@ const Home: React.FC = () => {
               drumType={drum.type}
               // letter={drum.key}
               onClick={() => handlePlayDrum(drum.sound)}
+              // TODO - get this shit workin
               onKeyDown={() => handlePlayDrum(drum.sound)}
             />
           ))}
