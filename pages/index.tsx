@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
 import Drumpad from '../components/Drumpad'
@@ -11,67 +11,83 @@ type DrumObject = {
 const drumTypes: DrumObject[] = [
   {
     type: 'bass',
-    sound: '/sounds/bass.wav'
+    sound: '/sounds/bass.wav',
+    key: "Q"
   },
   {
     type: 'clap',
-    sound: '/sounds/clap.wav'
+    sound: '/sounds/clap.wav',
+    key: "A"
   },
   {
     type: 'clap2',
-    sound: '/sounds/clap2.wav'
+    sound: '/sounds/clap2.wav',
+    key: "W"
   },
   {
     type: 'conga',
-    sound: '/sounds/conga.wav'
+    sound: '/sounds/conga.wav',
+    key: "S"
   },
   {
     type: 'cowbell',
-    sound: '/sounds/cowbell.wav'
+    sound: '/sounds/cowbell.wav',
+    key: "E"
   },
   {
     type: 'cymbal',
-    sound: '/sounds/cymbal.wav'
+    sound: '/sounds/cymbal.wav',
+    key: "D"
   },
   {
     type: 'drum',
-    sound: '/sounds/drum.wav'
+    sound: '/sounds/drum.wav',
+    key: "R"
   },
   {
     type: 'highcong',
-    sound: '/sounds/highcong.wav'
+    sound: '/sounds/highcong.wav',
+    key: "F"
   },
   {
     type: 'highsound',
-    sound: '/sounds/highsound.wav'
+    sound: '/sounds/highsound.wav',
+    key: "U"
   },
   {
     type: 'low-bass',
-    sound: '/sounds/low-bass.wav'
+    sound: '/sounds/low-bass.wav',
+    key: "J"
   },
   {
     type: 'lowcong',
-    sound: '/sounds/lowcong.wav'
+    sound: '/sounds/lowcong.wav',
+    key: "I"
   },
   {
     type: 'lowdrum',
-    sound: '/sounds/lowdrum.wav'
+    sound: '/sounds/lowdrum.wav',
+    key: "K"
   },
   {
     type: 'lowerbass',
-    sound: '/sounds/lowerbass.wav'
+    sound: '/sounds/lowerbass.wav',
+    key: "O"
   },
   {
     type: 'metalthing',
-    sound: '/sounds/metalthing.wav'
+    sound: '/sounds/metalthing.wav',
+    key: "L"
   },
   {
     type: 'morebass',
-    sound: '/sounds/morebass.wav'
+    sound: '/sounds/morebass.wav',
+    key: "P"
   },
   {
     type: 'salt',
-    sound: '/sounds/salt.wav'
+    sound: '/sounds/salt.wav',
+    key: ";"
   }
 ]
 
@@ -99,6 +115,14 @@ const PadsWrapper = styled.main`
 const Home: React.FC = () => {
   const [drums] = useState(drumTypes)
 
+  // useEffect(() => {
+  //   document.addEventListener("keydown", (e) => {
+  //     if (e.key.toLowerCase() === drumTypes.key.toLowerCase()) {
+  //       audio.play()
+  //     }
+  //   })
+  // }, [])
+
   const handlePlayDrum = (sound: string): void => {
     const audio = new Audio(sound)
     audio.play()
@@ -118,7 +142,9 @@ const Home: React.FC = () => {
             <Drumpad 
               key={drum.type}
               drumType={drum.type}
+              // letter={drum.key}
               onClick={() => handlePlayDrum(drum.sound)}
+              onKeyDown={() => handlePlayDrum(drum.sound)}
             />
           ))}
         </PadsWrapper>

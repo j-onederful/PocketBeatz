@@ -24,11 +24,13 @@ const StyledDrum = styled.div`
 
 type Props = {
     drumType: string;
-    onClick: () => void
+    // letter: string;
+    onClick: () => void;
+    onKeyDown: () => void;
 }
 
-const Drumpad: React.FC<Props> = ({ drumType, onClick }) => (
-    <StyledDrum onClick={onClick}></StyledDrum>
+const Drumpad: React.FC<Props> = ({ drumType, onClick, onKeyDown }) => (
+    <StyledDrum onClick={onClick} onKeyDown={onKeyDown}></StyledDrum>
 )
 
 export default Drumpad
