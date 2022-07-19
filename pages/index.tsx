@@ -7,7 +7,6 @@ type DrumObject = {
   [key: string]: string;
 }
 
-// sounds=drumTypes
 const drumTypes: DrumObject[] = [
   {
     type: 'bass',
@@ -134,40 +133,27 @@ const PadsWrapper = styled.main`
 const Home: React.FC = () => {
   const [drums] = useState(drumTypes)
 
-  
+  // makes new audio to play sound of corresponding drumType
   const handlePlayDrum = (sound: string): void => {
     const audio = new Audio(sound)
     audio.play()
   }
 
+  // plays sound for corresponding drumType when corresponding key is pressed on computer
   useEffect(() => {
     const keydownHandler = (e) => {
       console.log(e.key)
+      // filters out which sound is connected with corresponding key that is pressed
       const keyIndex = drumTypes.filter(drumType => drumType.key === e.key)
       console.log(keyIndex)
+      // accounts for if an unlinked key is pressed
       if (keyIndex.length > 0) {
         handlePlayDrum(keyIndex[0].sound)
       }
     }
     document.addEventListener("keydown", keydownHandler)
     return () => document.removeEventListener("keydown", keydownHandler) 
-
   }, [])
-
-
- // function that logs which key is pressed
-  // const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-  //   event.preventDefault()
-  //   console.log(event.key)
-  //   console.log(event.target.value)
-  // }
-
- // try 2 for function that logs which key is pressed
-  // const handleKeyDown = () => {
-  // const logKey = (e: React.KeyboardEvent): void => {
-  //   console.log(e.key)
-  // }
-  // }
 
   return (
     <div>
@@ -182,12 +168,7 @@ const Home: React.FC = () => {
           {drums.map(drum => (
             <Drumpad 
               key={drum.type}
-              // drumType={drum.type}
-              letter={drum.key}
               onClick={() => handlePlayDrum(drum.sound)}
-              // onKeyDown{() => keydown()}
-              // TODO - get this shit workin
-              // onKeyDown={logKey}
             />
           ))}
         </PadsWrapper>

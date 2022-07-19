@@ -1,5 +1,3 @@
-import React, { useEffect } from 'react'
-
 import styled from 'styled-components'
 
 // TODO - finish styling mobile
@@ -26,20 +24,11 @@ const StyledDrumPad = styled.div`
 `
 
 type Props = {
-    // drumType: string;
-    letter: string;
     onClick: () => void;
-    // TODO: get this shit workin
-    // onKeyDown: ((event: React.KeyboardEvent) => void);
 }
 
-const Drumpad: React.FC<Props> = ({ letter, onClick,
-    //  onKeyDown
-}) => (
-
-    <StyledDrumPad onClick={onClick} 
-    // onKeyDown={onKeyDown}
-    ></StyledDrumPad>
+const Drumpad: React.FC<Props> = ({ onClick }) => (
+    <StyledDrumPad onClick={onClick}></StyledDrumPad>
 )
 
 export default Drumpad
