@@ -108,14 +108,14 @@ const DrumMachine = styled.div`
   filter: drop-shadow(15px 15px 15px black);
 
   @media (max-width: 700px) {
-    align-items: center;
+    // align-items: end;
     // justify-content: center;
-    position: static;
-    margin-right: 1rem;
+    // position: static;
+    margin-left: 2rem;
     width: 390px;
-    height: 40rem;
-    flex-direction: row;
-    margin-top: 2rem;
+    height: 45rem;
+    // flex-direction: row;
+    margin-top: 6rem;
   }
 `
 // TODO - finish styling mobile
@@ -131,6 +131,8 @@ const DrumPadsWrapper = styled.main`
     // grid-template-columns: 1fr 1fr 1fr 1fr;
     position: fixed;
     padding-left: 1rem;
+    padding-top: 1.5rem;
+    align-self: start
   }
 `
 const SidePanelWrapper = styled.main`
@@ -145,6 +147,13 @@ const SidePanelWrapper = styled.main`
     // position: fixed;
     // padding: 0;
     transform: rotate(90deg);
+    width: 70%;
+    padding-left: 2.1rem;
+    z-index: 1;
+    // flex-direction: row;
+    align-items: start;
+    margin-right: 10rem;
+    margin-bottom: 2rem;
   }
 `
 

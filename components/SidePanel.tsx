@@ -1,18 +1,7 @@
 import styled from 'styled-components'
 import Image from "next/image"
 
-// // show instructions
-// const showInstructions = () => {
-//     instructionsContainer.classList.remove("hidden")
-//   };
-  
-//   // hide instructions
-//   const hideInstructions = () => {
-//     instructionsContainer.classList.add("hidden")
-//   };
-//   //Event listeners for instructions
-//   instructions.addEventListener("click", showInstructions)
-//   hideInstructionsButton.addEventListener("click", hideInstructions)
+
 
 const VolumeKnobPic = <Image
 // '/' assumes you are in the public folder
@@ -44,14 +33,17 @@ const VolumeKnobsDiv = styled.div`
     padding-bottom: 3rem;
 
     @media (max-width: 700px) {
-        align-items: center;
-        // justify-content: center;
-        position: static;
-        margin-right: 1rem;
-        width: 390px;
-        height: 40rem;
-        flex-direction: row;
-        margin-top: 2rem;
+        // align-items: center;
+        // // justify-content: center;
+        // position: static;
+        margin-right: 3rem;
+        margin-bottom: 2rem;
+        transform: scale(1.75)
+        grid-gap: 10px;
+        // width: 390px;
+        // height: 40rem;
+        // flex-direction: row;
+        // margin-top: 2rem;
       }
     
 `
@@ -61,8 +53,12 @@ const LogoDiv = styled.div`
     justify-content: center;
     // grid-template-columns: 1fr;
     // grid-gap: 1.5rem;
-    // margin-top: 2rem;
+    // margin-left: 2rem;
     padding-bottom: 1.5rem;
+
+    @media (max-width: 700px) {
+        display: none
+      }
     
 `
 const SidePanel: React.FC = () => (
