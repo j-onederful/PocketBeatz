@@ -141,12 +141,20 @@ const Home: React.FC = () => {
   }
 
   useEffect(() => {
-    const keydown = (key: string): void => document.addEventListener("keydown", (e) => {
-      if (e.key === key) {
-        handlePlayDrum(e.key)
+    const keydownHandler = (e) => {
+      console.log(e.key)
+      const keyIndex = drumTypes.filter(drumType => drumType.key === e.key)
+      console.log(keyIndex)
+      if (keyIndex.length > 0) {
+        handlePlayDrum(keyIndex[0].sound)
       }
-    })
+    }
+    document.addEventListener("keydown", keydownHandler)
+    return () => document.removeEventListener("keydown", keydownHandler) 
+
   }, [])
+
+
  // function that logs which key is pressed
   // const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
   //   event.preventDefault()
@@ -177,7 +185,7 @@ const Home: React.FC = () => {
               // drumType={drum.type}
               letter={drum.key}
               onClick={() => handlePlayDrum(drum.sound)}
-              onKeyDown{() => keydown()}
+              // onKeyDown{() => keydown()}
               // TODO - get this shit workin
               // onKeyDown={logKey}
             />

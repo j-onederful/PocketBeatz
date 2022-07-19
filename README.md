@@ -38,6 +38,7 @@
  * Development of fullstack MERN app so user can save beat they created
   - Create login and sign up pages, as well as saved beats pages
  * Ability to edit saved beats
+ * Sequencer (ABLETON LIVE)
  
  
  ### Sprints
