@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 // TODO - finish styling mobile
-const StyledDrumPad = styled.div`
+const SingleDrumPad = styled.div`
     width: 8rem;
     height: 8rem;
     border-radius: 6px;
@@ -28,7 +28,7 @@ type Props = {
 }
 
 const Drumpad: React.FC<Props> = ({ onClick }) => (
-    <StyledDrumPad onClick={onClick}></StyledDrumPad>
+    <SingleDrumPad onClick={onClick}></SingleDrumPad>
 )
 
 export default Drumpad

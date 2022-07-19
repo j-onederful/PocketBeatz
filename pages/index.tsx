@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
 import Drumpad from '../components/Drumpad'
+import SidePanel from '../components/SidePanel'
 
 type DrumObject = {
   [key: string]: string;
@@ -91,42 +92,59 @@ const drumTypes: DrumObject[] = [
 ]
 
 // TODO - finish styling mobile
-const Wrapper = styled.div`
+const DrumMachine = styled.div`
   min-height: 40vh;
-  width: 90vh;
+  width: 85vh;
   // padding: 0 0.5rem;
   margin-top: 10rem;
   
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   flex-direction: column;
   justify-content: center;
   align-items: end;
-  background-color: gray;
+  background-color: #111111;
   border-radius: 10px;
-  filter: drop-shadow(10px 10px 10px black);
+  filter: drop-shadow(15px 15px 15px black);
 
   @media (max-width: 700px) {
     align-items: center;
+    // justify-content: center;
     position: static;
-    // margin-left: 55px;
-    width: 380px;
+    margin-right: 1rem;
+    width: 390px;
     height: 40rem;
-    flex-direction: row
-    margin-bottom: 10rem;
+    flex-direction: row;
+    margin-top: 2rem;
   }
 `
 // TODO - finish styling mobile
-const PadsWrapper = styled.main`
+const DrumPadsWrapper = styled.main`
   padding: 2rem 2rem;
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 5px;
+  border-radius: 10px;
   
   @media (max-width: 700px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
     position: fixed;
-    padding: 0;
+    padding-left: 1rem;
+  }
+`
+const SidePanelWrapper = styled.main`
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+  // padding: 2rem;
+  display: flex;
+  border-radius: 10px;
+  
+  @media (max-width: 700px) {
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    // position: fixed;
+    // padding: 0;
+    transform: rotate(90deg);
   }
 `
 
@@ -163,16 +181,19 @@ const Home: React.FC = () => {
         <link rel="icon" href="/pocketbeatzlogo.png" />
       </Head>
 
-      <Wrapper>
-        <PadsWrapper>
+      <DrumMachine>
+        <SidePanelWrapper>
+          <SidePanel></SidePanel>
+        </SidePanelWrapper>
+        <DrumPadsWrapper>
           {drums.map(drum => (
             <Drumpad 
               key={drum.type}
               onClick={() => handlePlayDrum(drum.sound)}
             />
           ))}
-        </PadsWrapper>
-      </Wrapper>
+        </DrumPadsWrapper>
+      </DrumMachine>
     </div>
   )
 }
