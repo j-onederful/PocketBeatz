@@ -26,7 +26,7 @@ const StyledDrumPad = styled.div`
 `
 
 type Props = {
-    drumType: string;
+    // drumType: string;
     letter: string;
     onClick: () => void;
     // TODO: get this shit workin
@@ -35,7 +35,7 @@ type Props = {
 
 const Drumpad: React.FC<Props> = ({ letter, onClick,
     //  onKeyDown
-     }) => (
+}) => (
 
     <StyledDrumPad onClick={onClick} 
     // onKeyDown={onKeyDown}

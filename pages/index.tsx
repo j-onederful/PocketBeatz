@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
 import Drumpad from '../components/Drumpad'
@@ -134,18 +134,19 @@ const PadsWrapper = styled.main`
 const Home: React.FC = () => {
   const [drums] = useState(drumTypes)
 
-  // useEffect(() => {
-  //   document.addEventListener("keydown", (e) => {
-  //     if (e.key.toLowerCase() === drumTypes.key.toLowerCase()) {
-  //       audio.play()
-  //     }
-  //   })
-  // }, [])
-
+  
   const handlePlayDrum = (sound: string): void => {
     const audio = new Audio(sound)
     audio.play()
   }
+
+  useEffect(() => {
+    const keydown = (key: string): void => document.addEventListener("keydown", (e) => {
+      if (e.key === key) {
+        handlePlayDrum(e.key)
+      }
+    })
+  }, [])
  // function that logs which key is pressed
   // const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
   //   event.preventDefault()
@@ -176,6 +177,7 @@ const Home: React.FC = () => {
               // drumType={drum.type}
               letter={drum.key}
               onClick={() => handlePlayDrum(drum.sound)}
+              onKeyDown{() => keydown()}
               // TODO - get this shit workin
               // onKeyDown={logKey}
             />
