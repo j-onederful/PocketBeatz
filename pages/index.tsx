@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
 import Drumpad from '../components/Drumpad'
@@ -12,77 +12,77 @@ const drumTypes: DrumObject[] = [
   {
     type: 'bass',
     sound: '/sounds/bass.wav',
-    key: "Q"
+    key: "q"
   },
   {
     type: 'clap',
     sound: '/sounds/clap.wav',
-    key: "A"
+    key: "a"
   },
   {
     type: 'clap2',
     sound: '/sounds/clap2.wav',
-    key: "W"
+    key: "w"
   },
   {
     type: 'conga',
     sound: '/sounds/conga.wav',
-    key: "S"
+    key: "s"
   },
   {
     type: 'cowbell',
     sound: '/sounds/cowbell.wav',
-    key: "E"
+    key: "e"
   },
   {
     type: 'cymbal',
     sound: '/sounds/cymbal.wav',
-    key: "D"
+    key: "d"
   },
   {
     type: 'drum',
     sound: '/sounds/drum.wav',
-    key: "R"
+    key: "r"
   },
   {
     type: 'highcong',
     sound: '/sounds/highcong.wav',
-    key: "F"
+    key: "f"
   },
   {
     type: 'highsound',
     sound: '/sounds/highsound.wav',
-    key: "U"
+    key: "u"
   },
   {
     type: 'low-bass',
     sound: '/sounds/low-bass.wav',
-    key: "J"
+    key: "j"
   },
   {
     type: 'lowcong',
     sound: '/sounds/lowcong.wav',
-    key: "I"
+    key: "i"
   },
   {
     type: 'lowdrum',
     sound: '/sounds/lowdrum.wav',
-    key: "K"
+    key: "k"
   },
   {
     type: 'lowerbass',
     sound: '/sounds/lowerbass.wav',
-    key: "O"
+    key: "o"
   },
   {
     type: 'metalthing',
     sound: '/sounds/metalthing.wav',
-    key: "L"
+    key: "l"
   },
   {
     type: 'morebass',
     sound: '/sounds/morebass.wav',
-    key: "P"
+    key: "p"
   },
   {
     type: 'salt',
@@ -91,6 +91,7 @@ const drumTypes: DrumObject[] = [
   }
 ]
 
+// TODO - finish styling mobile
 const Wrapper = styled.div`
   min-height: 40vh;
   width: 90vh;
@@ -115,7 +116,7 @@ const Wrapper = styled.div`
     margin-bottom: 10rem;
   }
 `
-
+// TODO - finish styling mobile
 const PadsWrapper = styled.main`
   padding: 2rem 2rem;
   flex: 1;
@@ -145,6 +146,19 @@ const Home: React.FC = () => {
     const audio = new Audio(sound)
     audio.play()
   }
+ // function that logs which key is pressed
+  // const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  //   event.preventDefault()
+  //   console.log(event.key)
+  //   console.log(event.target.value)
+  // }
+
+ // try 2 for function that logs which key is pressed
+  // const handleKeyDown = () => {
+  // const logKey = (e: React.KeyboardEvent): void => {
+  //   console.log(e.key)
+  // }
+  // }
 
   return (
     <div>
@@ -159,11 +173,11 @@ const Home: React.FC = () => {
           {drums.map(drum => (
             <Drumpad 
               key={drum.type}
-              drumType={drum.type}
-              // letter={drum.key}
+              // drumType={drum.type}
+              letter={drum.key}
               onClick={() => handlePlayDrum(drum.sound)}
               // TODO - get this shit workin
-              onKeyDown={() => handlePlayDrum(drum.sound)}
+              // onKeyDown={logKey}
             />
           ))}
         </PadsWrapper>
