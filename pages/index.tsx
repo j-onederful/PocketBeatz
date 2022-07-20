@@ -93,11 +93,9 @@ const drumTypes: DrumObject[] = [
   }
 ]
 
-// TODO - finish styling mobile
 const DrumMachine = styled.div`
   min-height: 40vh;
   width: 85vh;
-  // padding: 0 0.5rem;
   margin-top: 10rem;
   
   display: grid;
@@ -110,17 +108,12 @@ const DrumMachine = styled.div`
   filter: drop-shadow(15px 15px 15px black);
 
   @media (max-width: 700px) {
-    // align-items: end;
-    // justify-content: center;
-    // position: static;
     margin-left: 2rem;
     width: 390px;
     height: 45rem;
-    // flex-direction: row;
     margin-top: 6rem;
   }
 `
-// TODO - finish styling mobile
 const DrumPadsWrapper = styled.main`
   padding: 2rem 2rem;
   flex: 1;
@@ -130,7 +123,6 @@ const DrumPadsWrapper = styled.main`
   border-radius: 10px;
   
   @media (max-width: 700px) {
-    // grid-template-columns: 1fr 1fr 1fr 1fr;
     position: fixed;
     padding-left: 1rem;
     padding-top: 1.5rem;
@@ -140,19 +132,14 @@ const DrumPadsWrapper = styled.main`
 const SidePanelWrapper = styled.main`
   margin-left: 3rem;
   margin-bottom: 3rem;
-  // padding: 2rem;
   display: flex;
   border-radius: 10px;
   
   @media (max-width: 700px) {
-    // grid-template-columns: 1fr 1fr 1fr 1fr;
-    // position: fixed;
-    // padding: 0;
     transform: rotate(90deg);
     width: 70%;
     padding-left: 2.1rem;
     z-index: 1;
-    // flex-direction: row;
     align-items: start;
     margin-right: 10rem;
     margin-bottom: 2rem;
@@ -167,21 +154,17 @@ height={70}
 />
 
 const MobileLogoDiv = styled.div`
-    display: none;
+  display: none;
 
-    @media (max-width: 700px) {
-        display: flex;
-        position: fixed;
-        // align-self: center;
-        justify-self: center;
-        // grid-template-columns: 1fr;
-        // grid-gap: 1.5rem;
-        // margin-right: 3rem;
-        margin-bottom: 4rem;
-        border-style: solid;
-        border-color: red;
-        border-radius: 50%;
-      }
+  @media (max-width: 700px) {
+    display: flex;
+    position: fixed;
+    justify-self: center;
+    margin-bottom: 4rem;
+    border-style: solid;
+    border-color: red;
+    border-radius: 50%;
+  }
     
 `
 const Home: React.FC = () => {
