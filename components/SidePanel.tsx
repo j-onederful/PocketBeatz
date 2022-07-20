@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Image from "next/image"
 
+// created image for volume knobs (no functionality yet)
 const VolumeKnobPic = <Image
 src='/volume-knob.png'
 alt='volume knob'
@@ -8,6 +9,7 @@ width={80}
 height={80}
 />
 
+// image of logo for pocketbeatz (no functionality yet but will be pressable and bring up instruction modal)
 const LogoPic = <Image
 src='/pocketbeatzlogo.png'
 alt='pocketbeatz logo'
@@ -15,10 +17,12 @@ width={70}
 height={70}
 />
 
+// styled component that encompasses side panel
 const StyledSidePanel = styled.div`
    display: grid;
    grid-template-columns: 1fr;
 `
+// styled component that holds two volume knobs side by side
 const VolumeKnobsDiv = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -33,6 +37,7 @@ const VolumeKnobsDiv = styled.div`
       }
     
 `
+// styled component that holds logo pic at bottom of side panel
 const LogoDiv = styled.div`
     display: flex;
     align-items: center;
@@ -47,7 +52,7 @@ const LogoDiv = styled.div`
 
 const SidePanel: React.FC = () => (
     <StyledSidePanel>
-        
+
         <VolumeKnobsDiv>
             {VolumeKnobPic}
             {VolumeKnobPic}
