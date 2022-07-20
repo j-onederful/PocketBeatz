@@ -1,24 +1,37 @@
 # __PocketBeatz__
  
+ ![screenshot](./public/appscreenshot.png)
  ### What's happenin
  ---
  PocketBeatz is a simple app which allows you to create unique beats on a drum machine so that you can freestyle with your friends without having to resort to beatboxing no matter where you are.
- 
- ### Tech Planning on Using
+
+ ### Reflection
  ---
- Planning on using
+ Had a great time working on this project due to the lack of stress I was feeling for some reason. Started by cranking out the code for the functionality of the buttons using Next.js and Typescript which initially gave me some issues being a new language and all, but am now starting to get it a bit more.
+
+ Next I worked on styling for a bit before realizing that I had not finished my functionality completely, as I had not written keydown functions to link certain keys to the correct buttons. This was quite infuriating and took much longer than it should have, but with a little help from Weston I figured out that I wasn't too far off and finally got it working.
+
+ Lastly I finished with my styling using styled components which I thought was a pretty cool technology and very simple to implement. I got the computer screen version working well but had to get creative with the mobile styling where I used to janky styling to get everything in the right place. Will need to go back and write the media querys out a bit better.
+ 
+ ### Installation Instructions to Local
+ ---
+  1. clone the repo
+  2. npm i OR npm install in relevant directory
+  3. npm run dev
+  4. open localhost:300 in browser
+
+ ### Tech Used
+ ---
  - Next.js
  - Typescript
- - CSS (Tailwind)
- - Possibly Web Audio API
- - Possibly MongoDB (for stretch)
+ - CSS (styled-components)
 
 
  ![wireframe](./public/p4-wireframe.png)
 
  ### UserFlow
  ---
- Once user navigates to page they will immediately be able to start making their very own beats with the click of their mouse or tap of their finger. In addition to the 12 beat pad buttons, there will be seperate buttons which enable to change beat library that produces different percussive sounds. Pop-up instructions modal will display when clicked on.
+ Once user navigates to page they will immediately be able to start making their very own beats with the click of their mouse or tap of their finger. In addition to the 16 beat pad buttons, there will be seperate buttons which enable to change beat library that produces different percussive sounds (stretch).
 
  ### MVP
  ---
@@ -40,19 +53,4 @@
  * Ability to edit saved beats
  * Sequencer (ABLETON LIVE)
  
- 
- ### Sprints
- ---
- 1. Day 1:
-   * Research research research. Familiarize myself with NEXT.js and all other unfamiliar technologies
- 2. Day 2:
-   * Set up rough front end so am able to work on functionality and be able to test
- 3. Day 3:
-   * Work on getting functionality good to go with sounds and libraries linked up correctly
- 4. Day 4:
-   * Get CSS looking slick and make sure mobile accessible
- 5. Day 5:
-   * Stretch goals (link keys to pads for computer accessibility, enable recording and playback of beats)
- 6. Day 6:
-   * Stretch (begin implementing MERN, login first and sign up first)
  
