@@ -116,6 +116,7 @@ const DrumMachine = styled.div`
     margin-top: 6rem;
   }
 `
+
 // styled component for drum pads wrapper
 const DrumPadsWrapper = styled.main`
   padding: 2rem 2rem;
@@ -132,6 +133,7 @@ const DrumPadsWrapper = styled.main`
     align-self: start
   }
 `
+
 // styled component for side panel wrapper
 const SidePanelWrapper = styled.main`
   margin-left: 3rem;
@@ -149,6 +151,7 @@ const SidePanelWrapper = styled.main`
     margin-bottom: 2rem;
   }
 `
+
 const LogoPic = <Image
 // '/' assumes you are in the public folder
 src='/pocketbeatzlogo.png'
