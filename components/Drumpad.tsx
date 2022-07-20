@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+// styled component for drumpad buttons
 const SingleDrumPad = styled.div`
     width: 8rem;
     height: 8rem;

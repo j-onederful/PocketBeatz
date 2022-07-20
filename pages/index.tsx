@@ -10,6 +10,7 @@ type DrumObject = {
   [key: string]: string;
 }
 
+// array of data for all sounds
 const drumTypes: DrumObject[] = [
   {
     type: 'bass',
@@ -93,6 +94,7 @@ const drumTypes: DrumObject[] = [
   }
 ]
 
+// styled component for entire drum machine
 const DrumMachine = styled.div`
   min-height: 40vh;
   width: 85vh;
@@ -114,6 +116,7 @@ const DrumMachine = styled.div`
     margin-top: 6rem;
   }
 `
+// styled component for drum pads wrapper
 const DrumPadsWrapper = styled.main`
   padding: 2rem 2rem;
   flex: 1;
@@ -129,6 +132,7 @@ const DrumPadsWrapper = styled.main`
     align-self: start
   }
 `
+// styled component for side panel wrapper
 const SidePanelWrapper = styled.main`
   margin-left: 3rem;
   margin-bottom: 3rem;
@@ -153,6 +157,7 @@ width={70}
 height={70}
 />
 
+// styled component for logo div on mobile viewing
 const MobileLogoDiv = styled.div`
   display: none;
 
@@ -167,6 +172,7 @@ const MobileLogoDiv = styled.div`
   }
     
 `
+
 const Home: React.FC = () => {
   const [drums] = useState(drumTypes)
 
@@ -204,6 +210,7 @@ const Home: React.FC = () => {
         <SidePanelWrapper>
           <SidePanel></SidePanel>
         </SidePanelWrapper>
+
         <DrumPadsWrapper>
           {drums.map(drum => (
             <Drumpad 
@@ -212,6 +219,7 @@ const Home: React.FC = () => {
             />
           ))}
         </DrumPadsWrapper>
+
         <MobileLogoDiv>
             {LogoPic}
         </MobileLogoDiv>
