@@ -3,6 +3,8 @@ import Head from 'next/head'
 import styled from 'styled-components'
 import Drumpad from '../components/Drumpad'
 import SidePanel from '../components/SidePanel'
+import Image from "next/image"
+
 
 type DrumObject = {
   [key: string]: string;
@@ -156,7 +158,32 @@ const SidePanelWrapper = styled.main`
     margin-bottom: 2rem;
   }
 `
+const LogoPic = <Image
+// '/' assumes you are in the public folder
+src='/pocketbeatzlogo.png'
+alt='pocketbeatz logo'
+width={70}
+height={70}
+/>
 
+const MobileLogoDiv = styled.div`
+    display: none;
+
+    @media (max-width: 700px) {
+        display: flex;
+        position: fixed;
+        // align-self: center;
+        justify-self: center;
+        // grid-template-columns: 1fr;
+        // grid-gap: 1.5rem;
+        // margin-right: 3rem;
+        margin-bottom: 4rem;
+        border-style: solid;
+        border-color: red;
+        border-radius: 50%;
+      }
+    
+`
 const Home: React.FC = () => {
   const [drums] = useState(drumTypes)
 
@@ -202,6 +229,9 @@ const Home: React.FC = () => {
             />
           ))}
         </DrumPadsWrapper>
+        <MobileLogoDiv>
+            {LogoPic}
+        </MobileLogoDiv>
       </DrumMachine>
     </div>
   )

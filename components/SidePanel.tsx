@@ -61,6 +61,7 @@ const LogoDiv = styled.div`
       }
     
 `
+
 const SidePanel: React.FC = () => (
     <StyledSidePanel>
         <VolumeKnobsDiv>
@@ -78,6 +79,7 @@ const SidePanel: React.FC = () => (
         <LogoDiv>
             {LogoPic}
         </LogoDiv>
+       
     </StyledSidePanel>
 )
 export default SidePanel
