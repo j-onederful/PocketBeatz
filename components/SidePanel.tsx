@@ -1,10 +1,7 @@
 import styled from 'styled-components'
 import Image from "next/image"
 
-
-
 const VolumeKnobPic = <Image
-// '/' assumes you are in the public folder
 src='/volume-knob.png'
 alt='volume knob'
 width={80}
@@ -12,7 +9,6 @@ height={80}
 />
 
 const LogoPic = <Image
-// '/' assumes you are in the public folder
 src='/pocketbeatzlogo.png'
 alt='pocketbeatz logo'
 width={70}
@@ -22,28 +18,18 @@ height={70}
 const StyledSidePanel = styled.div`
    display: grid;
    grid-template-columns: 1fr;
-//    align-items: center;
-
 `
 const VolumeKnobsDiv = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1.5rem;
-    // margin-top: 2rem;
     padding-bottom: 3rem;
 
     @media (max-width: 700px) {
-        // align-items: center;
-        // // justify-content: center;
-        // position: static;
         margin-right: 3rem;
         margin-bottom: 2rem;
-        transform: scale(1.75)
+        transform: scale(1.2);
         grid-gap: 10px;
-        // width: 390px;
-        // height: 40rem;
-        // flex-direction: row;
-        // margin-top: 2rem;
       }
     
 `
@@ -51,9 +37,6 @@ const LogoDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    // grid-template-columns: 1fr;
-    // grid-gap: 1.5rem;
-    // margin-left: 2rem;
     padding-bottom: 1.5rem;
 
     @media (max-width: 700px) {
@@ -64,22 +47,25 @@ const LogoDiv = styled.div`
 
 const SidePanel: React.FC = () => (
     <StyledSidePanel>
+        
         <VolumeKnobsDiv>
             {VolumeKnobPic}
             {VolumeKnobPic}
         </VolumeKnobsDiv>
+
         <VolumeKnobsDiv>
             {VolumeKnobPic}
             {VolumeKnobPic}
         </VolumeKnobsDiv>
+
         <VolumeKnobsDiv>
             {VolumeKnobPic}
             {VolumeKnobPic}
         </VolumeKnobsDiv>
+
         <LogoDiv>
             {LogoPic}
         </LogoDiv>
-       
     </StyledSidePanel>
 )
 export default SidePanel
