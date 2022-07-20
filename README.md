@@ -1,5 +1,5 @@
 # __PocketBeatz__
- 
+ - [See the deployed site here!](https://pocketbeatz.vercel.app/)
  ![screenshot](./public/appscreenshot.png)
  ### What's happenin
  ---
