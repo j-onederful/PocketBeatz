@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-// TODO - finish styling mobile
 const SingleDrumPad = styled.div`
     width: 8rem;
     height: 8rem;
