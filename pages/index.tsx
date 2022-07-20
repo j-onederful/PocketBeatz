@@ -105,7 +105,7 @@ const DrumMachine = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: end;
-  background-color: #111111;
+  background-color: #2C2929;
   border-radius: 10px;
   filter: drop-shadow(15px 15px 15px black);
 
